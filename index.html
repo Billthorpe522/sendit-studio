@@ -625,6 +625,237 @@
   @media (prefers-reduced-motion: reduce) {
     .reveal { opacity: 1; transform: none; transition: none; }
   }
+
+  /* === WEBSITE WIDE CARD === */
+  .what-card-head {
+    display: flex; align-items: center; gap: 14px;
+    margin-bottom: 18px;
+  }
+  .what-card-title {
+    display: flex; align-items: center; gap: 10px;
+    flex-wrap: wrap;
+  }
+  .what-card-flag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    background: var(--accent-soft);
+    padding: 3px 8px;
+    border-radius: 999px;
+    font-weight: 600;
+  }
+  .what-card-wide {
+    grid-column: span 2;
+    background: linear-gradient(135deg, var(--surface), color-mix(in srgb, var(--accent) 4%, var(--surface)));
+    border-color: color-mix(in srgb, var(--accent) 25%, var(--rule));
+  }
+  @media (max-width: 900px) {
+    .what-card-wide { grid-column: span 2; }
+  }
+  @media (max-width: 480px) {
+    .what-card-wide { grid-column: span 1; }
+  }
+  .what-card-lead {
+    font-size: 0.95rem !important;
+    color: var(--ink-soft) !important;
+    margin-bottom: 16px !important;
+  }
+  .what-card-list {
+    list-style: none;
+    margin-bottom: 16px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 16px;
+  }
+  @media (max-width: 600px) {
+    .what-card-list { grid-template-columns: 1fr; }
+  }
+  .what-card-list li {
+    font-size: 0.825rem;
+    color: var(--gray);
+    line-height: 1.5;
+    padding-left: 16px;
+    position: relative;
+  }
+  .what-card-list li::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 9px;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+  .what-card-list li strong {
+    color: var(--ink);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 2px;
+  }
+  .what-card-footer {
+    font-size: 0.825rem !important;
+    color: var(--gray) !important;
+    padding-top: 14px;
+    border-top: 1px solid var(--rule);
+    margin-top: 4px;
+  }
+
+  /* === QUALITIES STRIP === */
+  .qualities {
+    margin-top: 64px;
+    padding: 40px 32px;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+  }
+  .qualities-head {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: var(--accent);
+    margin-bottom: 28px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .qualities-head::before {
+    content: ''; width: 28px; height: 1px; background: var(--accent);
+  }
+  .qualities-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px 36px;
+  }
+  @media (max-width: 900px) {
+    .qualities-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 560px) {
+    .qualities-grid { grid-template-columns: 1fr; gap: 24px; }
+  }
+  .quality {
+    position: relative;
+  }
+  .quality-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--accent);
+    letter-spacing: 0.14em;
+    margin-bottom: 8px;
+  }
+  .quality h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    letter-spacing: -0.01em;
+  }
+  .quality p {
+    font-size: 0.85rem;
+    color: var(--gray);
+    line-height: 1.55;
+  }
+
+  /* === CLIENT FOOTER SIGNATURE STRIP === */
+  .client-footer-strip {
+    max-width: 1280px; margin: 0 auto;
+    padding: 40px 24px 80px;
+  }
+  .client-footer-inner {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 24px;
+    padding: 48px;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 48px;
+    align-items: center;
+    box-shadow: var(--shadow);
+  }
+  @media (max-width: 900px) {
+    .client-footer-inner {
+      grid-template-columns: 1fr;
+      padding: 36px 28px;
+      gap: 32px;
+    }
+  }
+  .cfs-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+  .cfs-left h3 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    letter-spacing: -0.025em;
+    line-height: 1.1;
+    margin-bottom: 14px;
+  }
+  .cfs-left p {
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+    max-width: 38ch;
+  }
+  .cfs-right {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  @media (max-width: 560px) {
+    .cfs-right { grid-template-columns: 1fr; }
+  }
+  .cfs-code {
+    background: #0a0a0a;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid #1f1f1f;
+  }
+  .cfs-result {
+    background: var(--bg);
+    border: 1px dashed var(--rule);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  .cfs-code-head {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--gray);
+    padding: 10px 14px;
+    border-bottom: 1px solid #1f1f1f;
+  }
+  .cfs-code pre {
+    margin: 0;
+    padding: 16px 14px;
+    color: #d0d0cc;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    line-height: 1.6;
+    overflow-x: auto;
+  }
+  .cfs-render {
+    padding: 24px 14px;
+    display: flex; align-items: center; justify-content: center;
+    min-height: 96px;
+  }
+  .cfs-render a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--gray);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-family: 'JetBrains Mono', monospace;
+    transition: color 0.2s;
+  }
+  .cfs-render a:hover {
+    color: var(--accent);
+  }
+  .cfs-render a svg {
+    flex-shrink: 0;
+  }
 </style>
 </head>
 <body>
@@ -660,11 +891,11 @@
       <span class="light">Send it.</span>
     </h1>
     <p class="hero-lede">
-      Send It Studio is a one-person studio for websites, photo, video, and brand assets. Text, picture, voice note — whatever's easiest. You send the idea. I send back the work.
+      A small studio that builds websites worth sending people to, plus the photo, video, and brand assets that fill them out. Skip the form, skip the sales call. Send the idea however it's easiest. You get a real quote and a real site back.
     </p>
     <div class="hero-meta">
-      <span>Located<strong>Manhattan, IL</strong></span>
-      <span>Replies in<strong>Same day</strong></span>
+      <span>Based in<strong>Manhattan, IL</strong></span>
+      <span>Reply window<strong>Same day</strong></span>
       <span>Built by<strong>Bill Thorpe</strong></span>
     </div>
   </div>
@@ -783,18 +1014,18 @@
     <div class="working-with reveal" id="about">
       <h2>Who's on the other end.</h2>
       <p>
-        Send It Studio is Bill Thorpe. Twenty years of building things — houses, crews, cameras, code. Now one inbox for the work that doesn't need a whole agency.
+        Send It Studio is Bill Thorpe. Twenty years of building things, houses to cameras to code. Now one inbox for the work that doesn't need a whole agency behind it.
       </p>
       <div class="bill-card">
         <div class="bill-avatar">BT</div>
         <div class="bill-meta">
           <strong>Bill Thorpe</strong>
           <span>Founder · Builder · Shooter</span>
-          <p>Manhattan IL. Works nights, weekends, whenever a job needs to ship.</p>
+          <p>Manhattan IL. Works nights, weekends, and the windows between job sites.</p>
         </div>
       </div>
       <p>
-        Smaller projects land the same day you send them. Bigger builds (full sites, brand systems) get a written scope and a real timeline before anything starts. No retainer pressure. No upsell. Just the work.
+        Small asks ship same day you send them. Bigger builds (full sites, brand systems) get a written scope and a real timeline before a dollar changes hands. No retainers, no upsells, no project-manager maze. Just the work, sent back when it's done.
       </p>
     </div>
   </div>
@@ -804,56 +1035,115 @@
 <section class="what-section" id="what">
   <div class="what-header reveal">
     <h2>What lands in your inbox.</h2>
-    <p>The four things people send the studio for. Mix and match if it makes sense.</p>
+    <p>Four kinds of work, one inbox. Most clients start with a site and add photo or video once it ships.</p>
   </div>
 
   <div class="what-grid">
-    <div class="what-card reveal">
-      <div class="what-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
-          <line x1="8" y1="21" x2="16" y2="21"/>
-          <line x1="12" y1="17" x2="12" y2="21"/>
-        </svg>
+    <div class="what-card what-card-wide reveal">
+      <div class="what-card-head">
+        <div class="what-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+            <line x1="8" y1="21" x2="16" y2="21"/>
+            <line x1="12" y1="17" x2="12" y2="21"/>
+          </svg>
+        </div>
+        <div class="what-card-title">
+          <h3>Websites</h3>
+          <span class="what-card-flag">Flagship</span>
+        </div>
       </div>
-      <h3>Websites</h3>
-      <p>Landing pages, portfolios, business sites. Fast, mobile-first, made to be updated without calling a dev.</p>
+      <p class="what-card-lead">
+        Built to load fast on a phone, look right at any size, and bring you work, not just visitors.
+      </p>
+      <ul class="what-card-list">
+        <li><strong>Landing pages</strong> one-page sites that push a single offer or service</li>
+        <li><strong>Business sites</strong> home, about, services, contact, ready for SEO day one</li>
+        <li><strong>Portfolios</strong> for photographers, makers, contractors, creatives</li>
+        <li><strong>Booking + leads</strong> forms, click-to-call, calendars that actually get used</li>
+      </ul>
+      <p class="what-card-footer">
+        Every site ships editable. WordPress, plain HTML, or static. You change the words yourself, no dev ticket needed.
+      </p>
     </div>
 
     <div class="what-card reveal">
-      <div class="what-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
-          <circle cx="12" cy="13" r="4"/>
-        </svg>
+      <div class="what-card-head">
+        <div class="what-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+            <circle cx="12" cy="13" r="4"/>
+          </svg>
+        </div>
+        <h3>Photo</h3>
       </div>
-      <h3>Photo</h3>
-      <p>Product shots, headshots, jobsite, events. On-site or studio, your call.</p>
+      <p>Product, headshot, jobsite, event, real estate. Shot on location or staged in studio, your call.</p>
     </div>
 
     <div class="what-card reveal">
-      <div class="what-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <polygon points="23 7 16 12 23 17 23 7"/>
-          <rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
-        </svg>
+      <div class="what-card-head">
+        <div class="what-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="23 7 16 12 23 17 23 7"/>
+            <rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+          </svg>
+        </div>
+        <h3>Video</h3>
       </div>
-      <h3>Video</h3>
-      <p>Reels, walkthroughs, social cuts. Filmed on real cameras, edited in-house, ready to post.</p>
+      <p>Reels, walkthroughs, social cuts, recruiting clips. Real cameras, in-house edit, ready to post.</p>
     </div>
 
     <div class="what-card reveal">
-      <div class="what-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="13.5" cy="6.5" r="2.5"/>
-          <circle cx="19" cy="13" r="2.5"/>
-          <circle cx="6" cy="12" r="2.5"/>
-          <circle cx="10" cy="20" r="2.5"/>
-          <path d="M5.5 14.5L8.5 18M15.5 8L17.5 11M11 18L13 14"/>
-        </svg>
+      <div class="what-card-head">
+        <div class="what-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="13.5" cy="6.5" r="2.5"/>
+            <circle cx="19" cy="13" r="2.5"/>
+            <circle cx="6" cy="12" r="2.5"/>
+            <circle cx="10" cy="20" r="2.5"/>
+            <path d="M5.5 14.5L8.5 18M15.5 8L17.5 11M11 18L13 14"/>
+          </svg>
+        </div>
+        <h3>Brand</h3>
       </div>
-      <h3>Brand assets</h3>
-      <p>Logos, color, type, social templates. The whole kit so your stuff looks like it belongs together.</p>
+      <p>Logo, color, type, social templates. The whole kit so every page, post, and photo looks like it belongs together.</p>
+    </div>
+  </div>
+
+  <!-- === WEBSITE QUALITIES STRIP === -->
+  <div class="qualities reveal">
+    <div class="qualities-head">What's actually in the box</div>
+    <div class="qualities-grid">
+      <div class="quality">
+        <div class="quality-num">01</div>
+        <h4>Mobile-first</h4>
+        <p>Built for the phone in your customer's hand first. Desktop is the second screen, not the first.</p>
+      </div>
+      <div class="quality">
+        <div class="quality-num">02</div>
+        <h4>Fast on slow wifi</h4>
+        <p>No bloated frameworks. Loads in under a second on a job-site LTE connection.</p>
+      </div>
+      <div class="quality">
+        <div class="quality-num">03</div>
+        <h4>SEO-ready</h4>
+        <p>Clean markup, real meta tags, sitemap, Google-friendly out of the box. No add-on fees.</p>
+      </div>
+      <div class="quality">
+        <div class="quality-num">04</div>
+        <h4>Editable</h4>
+        <p>You log in, change a price, swap a photo, hit publish. No phone calls, no dev tickets.</p>
+      </div>
+      <div class="quality">
+        <div class="quality-num">05</div>
+        <h4>Works on its own</h4>
+        <p>Built to convert. Click-to-call, forms, calendars, booking, payments, the plumbing is wired in.</p>
+      </div>
+      <div class="quality">
+        <div class="quality-num">06</div>
+        <h4>Yours to keep</h4>
+        <p>No lock-in. Domain, hosting, code, files, all yours. Walk away anytime.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -863,24 +1153,24 @@
   <div class="how-inner">
     <div class="how-header reveal">
       <h2>How a project moves.</h2>
-      <p>Three steps. No project manager, no ticket queue, no portal login.</p>
+      <p>Three steps. No project manager, no ticket queue, no portal to log into. You text, you get a site back.</p>
     </div>
 
     <div class="how-steps">
       <div class="step reveal">
         <div class="step-num">01</div>
         <h3>Send it.</h3>
-        <p>Text, photo, voice, email, the form on this page. Whatever you've got. The messier the better.</p>
+        <p>Text, photo, voice memo, email, the form on this page, a carrier pigeon if you have one. Whatever you've got. The messier the better.</p>
       </div>
       <div class="step reveal">
         <div class="step-num">02</div>
-        <h3>We scope it.</h3>
-        <p>Same day you'll get a reply: either a price to start, a clarifying question, or a written scope if it's bigger.</p>
+        <h3>Get a real quote.</h3>
+        <p>Same day you'll hear back. A price to start, a clarifying question, or a written scope if the build's bigger than a single page. No "discovery phase." No bait-and-switch.</p>
       </div>
       <div class="step reveal">
         <div class="step-num">03</div>
-        <h3>We build it.</h3>
-        <p>You see drafts as they happen. Revisions are included. Final files land in your inbox or on your site, ready to use.</p>
+        <h3>Watch it ship.</h3>
+        <p>You see drafts as the work happens. Revisions are included. The final files land in your inbox, the site goes live, and you own every line of it.</p>
       </div>
     </div>
   </div>
@@ -896,10 +1186,43 @@
       <path d="M125 125 L145 165 L125 155 Z" fill="white"/>
     </svg>
     <h2>Got the idea.<br><span class="accent">Send it.</span></h2>
-    <p>One message is all it takes to start. Most replies go out same day.</p>
+    <p>One message is all it takes to start. Most replies go out the same day, with a price or a question.</p>
     <div class="cta-buttons">
-      <a href="sms:+18188888888" class="primary">Text me</a>
+      <a href="sms:+181****8888" class="primary">Text me</a>
       <a href="mailto:hello@senditstudio.com" class="secondary">Email instead</a>
+    </div>
+  </div>
+</section>
+
+<!-- === FOR CLIENT FOOTERS === -->
+<section class="client-footer-strip">
+  <div class="client-footer-inner">
+    <div class="cfs-left">
+      <div class="cfs-eyebrow">Built a site for a client?</div>
+      <h3>Drop the signature in their footer.</h3>
+      <p>One line of HTML, ships in any theme. The kind of attribution that brings work back to your inbox without nagging.</p>
+    </div>
+    <div class="cfs-right">
+      <div class="cfs-code">
+        <div class="cfs-code-head">signature.html</div>
+        <pre><code>&lt;a href="https://senditstudio.com" target="_blank"&gt;
+  Built by Send It Studio
+&lt;/a&gt;</code></pre>
+      </div>
+      <div class="cfs-result">
+        <div class="cfs-code-head">renders as</div>
+        <div class="cfs-render">
+          <a href="https://senditstudio.com" target="_blank" rel="noopener">
+            <svg width="14" height="14" viewBox="0 0 32 32" fill="none">
+              <path d="M16 4 C18 8 20 12 20 18 L20 22 L12 22 L12 18 C12 12 14 8 16 4 Z" fill="currentColor"/>
+              <circle cx="16" cy="14" r="2" fill="var(--bg)"/>
+              <path d="M12 22 L10 26 L14 24 Z" fill="currentColor"/>
+              <path d="M20 22 L22 26 L18 24 Z" fill="currentColor"/>
+            </svg>
+            Built by Send It Studio
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -919,7 +1242,6 @@
     <div>© <span id="year"></span> · Built by <a href="#about">Bill Thorpe</a></div>
   </div>
 </footer>
-
 <script>
   // Year
   document.getElementById('year').textContent = new Date().getFullYear();
